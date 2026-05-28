@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selected workflow projects by Ishmeet Mahajan.">
+  <title>Selected Workflow Projects | Ishmeet Mahajan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ishmeet Mahajan home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">Ishmeet Mahajan</span>
+        <span class="brand-title">AI-enabled marketing technologist | Creative automation, data workflows, and digital platforms</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">About / Approach</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero canvas-section">
+      <p class="eyebrow">Selected work</p>
+      <h1>Selected Workflow Projects</h1>
+      <p>A collection of practical projects, prototypes, and workflow systems across marketing operations, automotive retail, automation, and AI-enabled tooling.</p>
+    </section>
+
+    <section class="section work-list">
+      <article class="work-card">
+        <div class="workflow-diagram" aria-label="VIN description workflow diagram">
+          <div class="diagram-node">VIN list</div>
+          <div class="diagram-node">NHTSA decode</div>
+          <div class="diagram-node">Attributes</div>
+          <div class="diagram-node">Brand tone</div>
+          <div class="diagram-node output-node">Descriptions</div>
+        </div>
+        <div class="work-card-content">
+          <p class="card-kicker">Vehicle merchandising workflow</p>
+          <h2>VIN Decoder + AI Vehicle Description Workflow</h2>
+          <div class="detail-grid">
+            <div>
+              <h3>Context</h3>
+              <p>Large inventory volumes can make vehicle descriptions repetitive, inconsistent, and vendor-dependent, especially when staff are manually generating copy one vehicle at a time.</p>
+            </div>
+            <div>
+              <h3>Workflow</h3>
+              <p>Custom Google Sheets menu -> NHTSA VIN Decoder API -> structured attributes -> Claude-generated description output.</p>
+            </div>
+            <div>
+              <h3>Tools</h3>
+              <p>Google Sheets, Apps Script, NHTSA VIN Decoder API, Claude API, structured prompts.</p>
+            </div>
+          </div>
+          <a class="action-link" href="case-vin-ai-description.html" aria-label="View VIN Decoder and AI Vehicle Description case study">View case study</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="workflow-diagram branch-diagram" aria-label="Video script and voiceover workflow diagram">
+          <div class="diagram-node">Email trigger</div>
+          <div class="diagram-node">Make router</div>
+          <div class="diagram-node">Claude scripts</div>
+          <div class="diagram-node">ElevenLabs</div>
+          <div class="diagram-node output-node">Script + MP3</div>
+        </div>
+        <div class="work-card-content">
+          <p class="card-kicker">Inventory content automation</p>
+          <h2>Automated Inventory Video Script &amp; Voiceover Workflow</h2>
+          <div class="detail-grid">
+            <div>
+              <h3>Context</h3>
+              <p>Dealers use inventory videos to help shoppers understand and visualize unique units before a test drive, especially pre-owned vehicles. The workflow reduced reliance on one vehicle expert to script every car manually.</p>
+            </div>
+            <div>
+              <h3>Workflow</h3>
+              <p>Email trigger -> pasted vehicle-page details -> Make router -> Claude script generation across multiple video-style branches -> ElevenLabs voice synthesis -> script and MP3 returned by email.</p>
+            </div>
+            <div>
+              <h3>Tools</h3>
+              <p>Make.com, Claude API, ElevenLabs, email automation, webhooks, prompt design.</p>
+            </div>
+          </div>
+          <a class="action-link" href="case-video-voiceover.html" aria-label="View Automated Inventory Video Script and Voiceover case study">View case study</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="workflow-diagram" aria-label="Inventory scraper and data distribution workflow diagram">
+          <div class="diagram-node">Daily run</div>
+          <div class="diagram-node">Firecrawl map</div>
+          <div class="diagram-node">Filter URLs</div>
+          <div class="diagram-node">VIN check</div>
+          <div class="diagram-node output-node">Data feed</div>
+        </div>
+        <div class="work-card-content">
+          <p class="card-kicker">Inventory data automation</p>
+          <h2>Inventory Scraper &amp; Data Distribution Workflow</h2>
+          <div class="detail-grid">
+            <div>
+              <h3>Context</h3>
+              <p>Inventory data is often locked behind older systems, FTP feed processes, vendor approvals, or API access requests. This workflow used public inventory pages as the source for a feed-like data table.</p>
+            </div>
+            <div>
+              <h3>Workflow</h3>
+              <p>Daily scheduled Make run -> clear Sheet -> Firecrawl map -> code filters inventory URLs -> iterator -> JSON extraction -> VIN validation -> Google Sheet rows with photo links for distribution.</p>
+            </div>
+            <div>
+              <h3>Tools</h3>
+              <p>Make.com, Firecrawl API, Google Sheets, JavaScript/code modules, JSON parsing, iterator, LLM-assisted prompt and code support.</p>
+            </div>
+          </div>
+          <a class="action-link" href="case-ai-inventory-search.html" aria-label="View Inventory Scraper and Data Distribution case study">View case study</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact" class="contact-cta canvas-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Have a workflow, marketing system, or AI enablement problem worth untangling?</h2>
+        <p>Reach out on LinkedIn to connect or request more detail about the selected projects.</p>
+      </div>
+      <div class="button-row">
+        <a class="button primary" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ishmeet Mahajan. Marketing operations, workflow systems, and practical AI enablement.</p>
+    <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Automated Inventory Video Script & Voiceover Workflow case study by Ishmeet Mahajan.">
+  <title>Automated Inventory Video Script &amp; Voiceover Workflow | Ishmeet Mahajan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ishmeet Mahajan home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">Ishmeet Mahajan</span>
+        <span class="brand-title">AI-enabled marketing technologist | Creative automation, data workflows, and digital platforms</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">About / Approach</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero canvas-section">
+      <a class="back-link" href="work.html">Back to Work</a>
+      <p class="eyebrow">Case study</p>
+      <h1>Automated Inventory Video Script &amp; Voiceover Workflow</h1>
+      <p>An automation workflow that helped non-technical staff turn existing vehicle-page details into multiple expert-style video scripts and voiceover assets.</p>
+    </section>
+
+    <section class="section case-layout">
+      <aside class="case-sidebar">
+        <div class="sidebar-block">
+          <h2>Tools used</h2>
+          <div class="badge-cloud compact">
+            <span class="badge">Make.com</span>
+            <span class="badge">Claude API</span>
+            <span class="badge">ElevenLabs</span>
+            <span class="badge">Email automation</span>
+            <span class="badge">Webhooks</span>
+            <span class="badge">Prompt design</span>
+          </div>
+        </div>
+        <div class="workflow-diagram branch-diagram" aria-label="Video script and voiceover workflow diagram">
+          <div class="diagram-node">Vehicle details email</div>
+          <div class="diagram-node">Webhook trigger</div>
+          <div class="diagram-node">3 Claude styles</div>
+          <div class="diagram-node">ElevenLabs voices</div>
+          <div class="diagram-node output-node">Email response</div>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section>
+          <h2>Context</h2>
+          <p>Dealers often create videos for every unit in inventory, especially pre-owned vehicles where condition, color, options, trim, and small details can make each car feel distinct. Customers want enough information to understand and visualize the vehicle before deciding whether to come in for a test drive.</p>
+          <p>The broader goal was to simplify the car-shopping journey by giving users more of the information they need up front. The challenge was that good inventory videos depended on a vehicle expert who knew the cars, understood the features, and knew what was worth saying.</p>
+        </section>
+        <section>
+          <h2>Problem</h2>
+          <p>When that expert was not available, the process still needed to continue. Much of the raw information already existed on vehicle pages, but someone had to read it, interpret it, and turn it into a useful script. The workflow needed to make that possible for staff who could gather the source details, even if they were not product experts themselves.</p>
+        </section>
+        <section>
+          <h2>Constraints</h2>
+          <ul>
+            <li>Needed a simple trigger</li>
+            <li>Needed to work from existing vehicle-page descriptions or details pasted into an email body</li>
+            <li>Needed outputs returned in a usable format</li>
+            <li>Needed to control token usage and prompt quality</li>
+            <li>Needed to remain understandable for non-technical users</li>
+            <li>Needed to help staff who knew where to find the vehicle information, even if they were not product experts</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Workflow architecture</h2>
+          <p>A near-real-time Make workflow turns vehicle-page information into three script styles and matching voiceover files, then emails the assets back to the sender.</p>
+          <div class="architecture-accordion" aria-label="Workflow architecture step details">
+            <details>
+              <summary>Vehicle page details</summary>
+              <p>The team pastes existing vehicle information from the website into the email body.</p>
+            </details>
+            <details>
+              <summary>Webhook trigger</summary>
+              <p>The email starts the Make workflow, so staff do not need to open or understand the automation itself.</p>
+            </details>
+            <details>
+              <summary>Claude branches</summary>
+              <p>The workflow routes into three script styles, each with branded tone, video structure, walkaround guidance, length, and format requirements.</p>
+            </details>
+            <details>
+              <summary>ElevenLabs voices</summary>
+              <p>Each script branch is converted into a voiceover file using ElevenLabs.</p>
+            </details>
+            <details>
+              <summary>Email response</summary>
+              <p>The sender receives the scripts and MP3 files back by email in a near-real-time loop, typically under a minute.</p>
+            </details>
+          </div>
+        </section>
+        <section>
+          <h2>My role</h2>
+          <p>Designed the Make automation flow, structured prompts for different video styles, connected the Claude script-generation branches, integrated ElevenLabs voice synthesis on each branch, and tested whether the outputs captured the kind of feature-aware scripting an expert would normally provide.</p>
+        </section>
+        <section>
+          <h2>Outcome / value</h2>
+          <ul>
+            <li>Reduced manual scripting effort</li>
+            <li>Created repeatable video content workflows for multiple script styles</li>
+            <li>Improved consistency across inventory scripts</li>
+            <li>Supported 250+ vehicle videos generated over time</li>
+            <li>Returned usable scripts and MP3 files in roughly 30 seconds to under a minute</li>
+            <li>Made the workflow usable by staff who could gather source details without needing deep product expertise</li>
+            <li>Demonstrated how AI could support marketing content production without replacing human review</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What I learned</h2>
+          <p>The three video styles came from real staff feedback: what they noticed, what they wanted more control over, and what made the outputs more useful in practice. The workflow worked best as a loop between automation, human review, and real-world testing, with options staff could choose from and continue improving over time.</p>
+        </section>
+        <a class="back-link bottom-back" href="work.html">Back to Work</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ishmeet Mahajan. Marketing operations, workflow systems, and practical AI enablement.</p>
+    <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

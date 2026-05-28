@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inventory Scraper & Data Distribution Workflow case study by Ishmeet Mahajan.">
+  <title>Inventory Scraper &amp; Data Distribution Workflow | Ishmeet Mahajan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ishmeet Mahajan home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">Ishmeet Mahajan</span>
+        <span class="brand-title">AI-enabled marketing technologist | Creative automation, data workflows, and digital platforms</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">About / Approach</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero canvas-section">
+      <a class="back-link" href="work.html">Back to Work</a>
+      <p class="eyebrow">Case study</p>
+      <h1>Inventory Scraper &amp; Data Distribution Workflow</h1>
+      <p>A Make-based workflow that used Firecrawl, code modules, JSON extraction, and Google Sheets to turn public vehicle pages into structured inventory data for downstream vendors and marketplaces.</p>
+    </section>
+
+    <section class="section case-layout">
+      <aside class="case-sidebar">
+        <div class="sidebar-block">
+          <h2>Tools used</h2>
+          <div class="badge-cloud compact">
+            <span class="badge">Make.com</span>
+            <span class="badge">Firecrawl API</span>
+            <span class="badge">Google Sheets</span>
+            <span class="badge">JavaScript/code modules</span>
+            <span class="badge">JSON parsing</span>
+            <span class="badge">Iterator</span>
+            <span class="badge">LLM-assisted prompts</span>
+          </div>
+        </div>
+        <div class="workflow-diagram" aria-label="Inventory scraper and data distribution workflow diagram">
+          <div class="diagram-node">Daily run</div>
+          <div class="diagram-node">Firecrawl map</div>
+          <div class="diagram-node">Filter URLs</div>
+          <div class="diagram-node">Extract with JS</div>
+          <div class="diagram-node">JSON output</div>
+          <div class="diagram-node">VIN check</div>
+          <div class="diagram-node">Google Sheets</div>
+          <div class="diagram-node output-node">Data feed</div>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section>
+          <h2>Context</h2>
+          <p>Inventory data is often handled through legacy systems, FTP feeds, vendor-managed exports, or API access that can require approval and setup. This workflow started from a practical question: if the vehicle data is already visible on public inventory pages, can that become a usable feed-like data source?</p>
+        </section>
+        <section>
+          <h2>Problem</h2>
+          <p>The workflow needed to create an alternate path to structured inventory data without waiting on an FTP feed or vendor API process. It also needed to handle daily inventory changes, filter out irrelevant site links, extract valid vehicle data, and prepare rows that could be shared with other vendors or marketplaces.</p>
+        </section>
+        <section>
+          <h2>Constraints</h2>
+          <ul>
+            <li>Needed to run on a schedule</li>
+            <li>Needed to clear stale rows before each run</li>
+            <li>Needed to filter out irrelevant site links</li>
+            <li>Needed to extract structured JSON from inventory pages</li>
+            <li>Needed to validate VINs before writing rows</li>
+            <li>Needed to capture photo links along with core vehicle details</li>
+            <li>Needed to support daily inventory changes and downstream data distribution</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Workflow architecture</h2>
+          <p>The workflow runs daily, refreshes the working sheet, extracts current inventory data from public vehicle pages, and turns it into a feed-like output.</p>
+          <div class="architecture-accordion" aria-label="Workflow architecture step details">
+            <details>
+              <summary>Scheduled run</summary>
+              <p>Runs daily because inventory changes constantly and stale vehicle data loses value quickly.</p>
+            </details>
+            <details>
+              <summary>Clear Sheet</summary>
+              <p>Refreshes the working sheet by removing old rows before the new inventory run starts.</p>
+            </details>
+            <details>
+              <summary>Firecrawl map</summary>
+              <p>Gets all links from a predetermined inventory listing page so the workflow can discover current vehicle pages.</p>
+            </details>
+            <details>
+              <summary>Filter URLs</summary>
+              <p>Removes navigation, internal site, external, and irrelevant links, keeping only the inventory URLs needed for extraction.</p>
+            </details>
+            <details>
+              <summary>Iterator</summary>
+              <p>Runs through the filtered URL list one page at a time so the workflow can process every vehicle page consistently.</p>
+            </details>
+            <details>
+              <summary>JSON extraction</summary>
+              <p>Uses JavaScript/code steps to pull the exact vehicle data needed from each page and structure it as JSON.</p>
+            </details>
+            <details>
+              <summary>VIN check</summary>
+              <p>Confirms that each extracted unit includes a valid VIN before it is written into the dataset.</p>
+            </details>
+            <details>
+              <summary>Sheet rows</summary>
+              <p>Loads each car into Google Sheets one row at a time, with vehicle attributes organized into columns.</p>
+            </details>
+            <details>
+              <summary>Distribution</summary>
+              <p>Makes the refreshed data feed available for the places it needs to go, including marketplaces and vendor workflows.</p>
+            </details>
+          </div>
+        </section>
+        <section>
+          <h2>My role</h2>
+          <p>Designed the Make workflow structure, used Firecrawl's API for site mapping, created code steps to clean and filter URLs, connected the iterator and JSON extraction flow, validated VIN presence, and structured the Google Sheet output so the data could be used like an operational inventory feed.</p>
+        </section>
+        <section>
+          <h2>Outcome / value</h2>
+          <ul>
+            <li>Created a practical ingestion path from dealer website pages to structured spreadsheet rows</li>
+            <li>Reduced irrelevant URL noise before extraction</li>
+            <li>Captured valid vehicle rows with VINs and photo links</li>
+            <li>Created a feed-like output that could support downstream vendors, marketplaces, or internal workflows</li>
+            <li>Reduced dependency on slower FTP/API access paths for prototyping and operational testing</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What I learned</h2>
+          <p>Inventory automation starts with access to reliable data. Site mapping, URL cleanup, JSON structure, VIN validation, daily scheduling, and clean spreadsheet outputs mattered more than a polished front-end concept.</p>
+        </section>
+        <a class="back-link bottom-back" href="work.html">Back to Work</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ishmeet Mahajan. Marketing operations, workflow systems, and practical AI enablement.</p>
+    <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VIN Decoder + AI Vehicle Description Workflow case study by Ishmeet Mahajan.">
+  <title>VIN Decoder + AI Vehicle Description Workflow | Ishmeet Mahajan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ishmeet Mahajan home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">Ishmeet Mahajan</span>
+        <span class="brand-title">AI-enabled marketing technologist | Creative automation, data workflows, and digital platforms</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">About / Approach</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero canvas-section">
+      <a class="back-link" href="work.html">Back to Work</a>
+      <p class="eyebrow">Case study</p>
+      <h1>VIN Decoder + AI Vehicle Description Workflow</h1>
+      <p>A lightweight Google Sheets and Apps Script workflow that used the NHTSA VIN Decoder API and Claude to generate vehicle descriptions in bulk with structured attributes and a consistent brand tone.</p>
+    </section>
+
+    <section class="section case-layout">
+      <aside class="case-sidebar">
+        <div class="sidebar-block">
+          <h2>Tools used</h2>
+          <div class="badge-cloud compact">
+            <span class="badge">Google Sheets</span>
+            <span class="badge">Google Apps Script</span>
+            <span class="badge">NHTSA VIN Decoder API</span>
+            <span class="badge">Claude API</span>
+            <span class="badge">Structured prompts</span>
+          </div>
+        </div>
+        <div class="workflow-diagram" aria-label="VIN description workflow diagram">
+          <div class="diagram-node">Custom menu</div>
+          <div class="diagram-node">Decode VIN option</div>
+          <div class="diagram-node">NHTSA attributes</div>
+          <div class="diagram-node">Generate description</div>
+          <div class="diagram-node">Claude + brand tone</div>
+          <div class="diagram-node output-node">Description cell</div>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section>
+          <h2>Context</h2>
+          <p>Automotive brands and dealer groups can work with large inventory volumes, expensive vendor platforms, and recurring merchandising tasks. Staff also should not have to manually paste vehicle details into an LLM chat one unit at a time just to create usable descriptions.</p>
+        </section>
+        <section>
+          <h2>Problem</h2>
+          <p>The workflow needed a structured way to decode vehicle information, prepare consistent inputs, and generate descriptions in bulk while keeping brand tone and formatting consistent across rows.</p>
+        </section>
+        <section>
+          <h2>Constraints</h2>
+          <ul>
+            <li>Needed to be usable by non-technical users</li>
+            <li>Needed to fit into a familiar spreadsheet workflow</li>
+            <li>Needed to avoid heavy infrastructure</li>
+            <li>Needed to keep outputs structured by row and column</li>
+            <li>Needed separate actions for decoding VINs and generating descriptions</li>
+            <li>Needed to support a repeatable brand tone instead of one-off chat outputs</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Workflow architecture</h2>
+          <p>The spreadsheet has two separate menu actions: one to decode VINs into structured data, and another to generate branded descriptions from that data.</p>
+          <div class="architecture-accordion" aria-label="Workflow architecture step details">
+            <details>
+              <summary>Custom menu</summary>
+              <p>Adds spreadsheet actions staff can run without leaving Google Sheets.</p>
+            </details>
+            <details>
+              <summary>Decode VIN option</summary>
+              <p>Sends VIN rows to the NHTSA API and returns factual vehicle attributes.</p>
+            </details>
+            <details>
+              <summary>NHTSA attributes</summary>
+              <p>Loads decoded vehicle details back into structured columns, giving the AI step clean inputs.</p>
+            </details>
+            <details>
+              <summary>Generate description option</summary>
+              <p>Runs a second menu action that prepares the description request after vehicle data has been structured.</p>
+            </details>
+            <details>
+              <summary>Brand tone</summary>
+              <p>Provides Claude with tone, formatting, and description requirements so the copy fits the intended brand style.</p>
+            </details>
+            <details>
+              <summary>Description cell</summary>
+              <p>Writes the generated vehicle description back into the sheet, keeping each unit organized by row.</p>
+            </details>
+          </div>
+        </section>
+        <section>
+          <h2>My role</h2>
+          <p>Designed and built the workflow logic using Google Apps Script, connected the NHTSA VIN Decoder API, structured the spreadsheet layout, and created separate custom menu actions for VIN decoding and Claude-powered description generation with brand-tone prompt structure.</p>
+        </section>
+        <section>
+          <h2>Outcome / value</h2>
+          <ul>
+            <li>Reduced repetitive manual merchandising work</li>
+            <li>Made vehicle information easier to structure</li>
+            <li>Created a more consistent description generation process</li>
+            <li>Supported bulk description creation without manually using LLM chat for each vehicle</li>
+            <li>Made brand tone easier to apply consistently across inventory copy</li>
+            <li>Kept the workflow accessible inside a tool staff already understood</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What I learned</h2>
+          <p>AI outputs are much more useful when the input data is structured first. The workflow worked best when the NHTSA API handled factual vehicle attributes, the spreadsheet organized the source data, and the Claude layer handled brand-tone formatting and description generation.</p>
+        </section>
+        <a class="back-link bottom-back" href="work.html">Back to Work</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ishmeet Mahajan. Marketing operations, workflow systems, and practical AI enablement.</p>
+    <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
