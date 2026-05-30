@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Inventory Scraper & Data Distribution Workflow case study by Ishmeet Mahajan.">
   <title>Inventory Scraper &amp; Data Distribution Workflow | Ishmeet Mahajan</title>
-  <link rel="stylesheet" href="styles.css?v=20260530-2">
+  <link rel="stylesheet" href="styles.css?v=20260530-6">
 </head>
 <body>
   <header class="site-header">
@@ -34,7 +34,7 @@
       <a class="back-link" href="work.html">Back to Work</a>
       <p class="eyebrow">Case study</p>
       <h1>Inventory Scraper &amp; Data Distribution Workflow</h1>
-      <p>A Make-based workflow that used Firecrawl, code modules, JSON extraction, and Google Sheets to turn public vehicle pages into structured inventory data for downstream vendors and marketplaces.</p>
+      <p>A Make workflow that used Firecrawl, code modules, JSON extraction, and Google Sheets to turn public vehicle pages into feed-like inventory data.</p>
     </section>
 
     <section class="section case-layout">
@@ -66,27 +66,25 @@
       <article class="case-content">
         <section>
           <h2>Context</h2>
-          <p>Inventory data is often handled through legacy systems, FTP feeds, vendor-managed exports, or API access that can require approval and setup. This workflow started from a practical question: if the vehicle data is already visible on public inventory pages, can that become a usable feed-like data source?</p>
+          <p>Inventory data often sits behind legacy feeds, vendor exports, or API approvals. This workflow used public vehicle pages as a practical feed-like source.</p>
         </section>
         <section>
           <h2>Problem</h2>
-          <p>The workflow needed to create an alternate path to structured inventory data without waiting on an FTP feed or vendor API process. It also needed to handle daily inventory changes, filter out irrelevant site links, extract valid vehicle data, and prepare rows that could be shared with other vendors or marketplaces.</p>
+          <p>Create structured inventory rows without waiting on FTP/API access, while handling daily changes and filtering irrelevant links.</p>
         </section>
         <section>
           <h2>Constraints</h2>
           <ul>
-            <li>Needed to run on a schedule</li>
-            <li>Needed to clear stale rows before each run</li>
-            <li>Needed to filter out irrelevant site links</li>
-            <li>Needed to extract structured JSON from inventory pages</li>
-            <li>Needed to validate VINs before writing rows</li>
-            <li>Needed to capture photo links along with core vehicle details</li>
-            <li>Needed to support daily inventory changes and downstream data distribution</li>
+            <li>Daily scheduled refresh</li>
+            <li>Filter irrelevant links</li>
+            <li>Extract JSON from inventory pages</li>
+            <li>Validate VINs and capture photo links</li>
+            <li>Output rows for distribution</li>
           </ul>
         </section>
         <section>
           <h2>Workflow architecture</h2>
-          <p>The workflow runs daily, refreshes the working sheet, extracts current inventory data from public vehicle pages, and turns it into a feed-like output.</p>
+          <p>Runs daily, refreshes the Sheet, extracts current vehicle data, validates VINs, and outputs a feed-like table.</p>
           <div class="architecture-accordion" aria-label="Workflow architecture step details">
             <details>
               <summary>Scheduled run</summary>
@@ -128,21 +126,21 @@
         </section>
         <section>
           <h2>My role</h2>
-          <p>Designed the Make workflow structure, used Firecrawl's API for site mapping, created code steps to clean and filter URLs, connected the iterator and JSON extraction flow, validated VIN presence, and structured the Google Sheet output so the data could be used like an operational inventory feed.</p>
+          <p>Designed the Make workflow, used Firecrawl for mapping, wrote URL filtering/code steps, validated VINs, and structured the Google Sheet output.</p>
         </section>
         <section>
           <h2>Outcome / value</h2>
           <ul>
-            <li>Created a practical ingestion path from dealer website pages to structured spreadsheet rows</li>
+            <li>Turned dealer pages into structured Sheet rows</li>
             <li>Reduced irrelevant URL noise before extraction</li>
-            <li>Captured valid vehicle rows with VINs and photo links</li>
-            <li>Created a feed-like output that could support downstream vendors, marketplaces, or internal workflows</li>
-            <li>Reduced dependency on slower FTP/API access paths for prototyping and operational testing</li>
+            <li>Captured VINs, photos, and core attributes</li>
+            <li>Created a feed-like output for vendors, marketplaces, or internal workflows</li>
+            <li>Reduced dependency on slow feed/API access paths</li>
           </ul>
         </section>
         <section>
           <h2>What I learned</h2>
-          <p>Inventory automation starts with access to reliable data. Site mapping, URL cleanup, JSON structure, VIN validation, daily scheduling, and clean spreadsheet outputs mattered more than a polished front-end concept.</p>
+          <p>The hard part was reliable data access: mapping, URL cleanup, JSON structure, VIN checks, scheduling, and clean outputs.</p>
         </section>
         <a class="back-link bottom-back" href="work.html">Back to Work</a>
       </article>
@@ -154,6 +152,6 @@
     <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
   </footer>
 
-  <script src="script.js?v=20260530-2"></script>
+  <script src="script.js?v=20260530-6"></script>
 </body>
 </html>

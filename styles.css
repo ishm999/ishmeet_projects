@@ -414,7 +414,7 @@ li + li {
 
 .mini-canvas {
   display: grid;
-  grid-template-columns: minmax(74px, 1fr) 20px minmax(74px, 1fr) 20px minmax(74px, 1fr) 20px minmax(74px, 1fr) 20px minmax(74px, 1fr);
+  grid-template-columns: minmax(104px, 1fr) 20px minmax(104px, 1fr) 20px minmax(104px, 1fr) 20px minmax(104px, 1fr) 20px minmax(104px, 1fr);
   align-items: center;
   gap: 0.45rem;
   min-height: 230px;
@@ -435,10 +435,12 @@ li + li {
   color: var(--ink);
   font-size: clamp(0.72rem, 1.1vw, 0.86rem);
   font-weight: 800;
-  hyphens: auto;
+  hyphens: none;
   line-height: 1.15;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   text-align: center;
+  text-wrap: balance;
+  word-break: normal;
 }
 
 .mini-connector {
@@ -1600,6 +1602,12 @@ li + li {
 .site-footer a {
   color: var(--orange-dark);
   font-weight: 800;
+}
+
+@media (max-width: 1180px) {
+  .split-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 980px) {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="VIN Decoder + AI Vehicle Description Workflow case study by Ishmeet Mahajan.">
   <title>VIN Decoder + AI Vehicle Description Workflow | Ishmeet Mahajan</title>
-  <link rel="stylesheet" href="styles.css?v=20260530-2">
+  <link rel="stylesheet" href="styles.css?v=20260530-6">
 </head>
 <body>
   <header class="site-header">
@@ -34,7 +34,7 @@
       <a class="back-link" href="work.html">Back to Work</a>
       <p class="eyebrow">Case study</p>
       <h1>VIN Decoder + AI Vehicle Description Workflow</h1>
-      <p>A lightweight Google Sheets and Apps Script workflow that used the NHTSA VIN Decoder API and Claude to generate vehicle descriptions in bulk with structured attributes and a consistent brand tone.</p>
+      <p>A Google Sheets workflow that decoded VINs, structured attributes, and used Claude to generate branded descriptions in bulk.</p>
     </section>
 
     <section class="section case-layout">
@@ -62,26 +62,24 @@
       <article class="case-content">
         <section>
           <h2>Context</h2>
-          <p>Automotive brands and dealer groups can work with large inventory volumes, expensive vendor platforms, and recurring merchandising tasks. Staff also should not have to manually paste vehicle details into an LLM chat one unit at a time just to create usable descriptions.</p>
+          <p>Large inventories and vendor platforms can make merchandising copy repetitive and hard to keep consistent. Staff also should not have to prompt an LLM one vehicle at a time.</p>
         </section>
         <section>
           <h2>Problem</h2>
-          <p>The workflow needed a structured way to decode vehicle information, prepare consistent inputs, and generate descriptions in bulk while keeping brand tone and formatting consistent across rows.</p>
+          <p>Create a spreadsheet-based way to decode vehicle data and generate brand-consistent descriptions in bulk.</p>
         </section>
         <section>
           <h2>Constraints</h2>
           <ul>
-            <li>Needed to be usable by non-technical users</li>
-            <li>Needed to fit into a familiar spreadsheet workflow</li>
-            <li>Needed to avoid heavy infrastructure</li>
-            <li>Needed to keep outputs structured by row and column</li>
-            <li>Needed separate actions for decoding VINs and generating descriptions</li>
-            <li>Needed to support a repeatable brand tone instead of one-off chat outputs</li>
+            <li>Usable by non-technical staff inside Google Sheets</li>
+            <li>No heavy infrastructure</li>
+            <li>Structured rows and columns</li>
+            <li>Separate actions for VIN decoding and brand-tone description generation</li>
           </ul>
         </section>
         <section>
           <h2>Workflow architecture</h2>
-          <p>The spreadsheet has two separate menu actions: one to decode VINs into structured data, and another to generate branded descriptions from that data.</p>
+          <p>Two menu actions run the workflow: decode VINs, then generate descriptions from the structured rows.</p>
           <div class="architecture-accordion" aria-label="Workflow architecture step details">
             <details>
               <summary>Custom menu</summary>
@@ -111,28 +109,26 @@
         </section>
         <section>
           <h2>My role</h2>
-          <p>Designed and built the workflow logic using Google Apps Script, connected the NHTSA VIN Decoder API, structured the spreadsheet layout, and created separate custom menu actions for VIN decoding and Claude-powered description generation with brand-tone prompt structure.</p>
+          <p>Built the Apps Script workflow, connected NHTSA VIN decoding, structured the Sheet, and added separate menu actions for decoding and Claude-powered description generation.</p>
         </section>
         <section>
           <h2>Outcome / value</h2>
           <ul>
-            <li>Reduced repetitive manual merchandising work</li>
-            <li>Made vehicle information easier to structure</li>
-            <li>Created a more consistent description generation process</li>
-            <li>Supported bulk description creation without manually using LLM chat for each vehicle</li>
-            <li>Made brand tone easier to apply consistently across inventory copy</li>
-            <li>Kept the workflow accessible inside a tool staff already understood</li>
+            <li>Reduced manual merchandising work</li>
+            <li>Structured vehicle data for bulk copy</li>
+            <li>Improved brand-tone consistency</li>
+            <li>Kept the workflow inside Google Sheets</li>
           </ul>
         </section>
         <section>
           <h2>What I learned</h2>
-          <p>AI outputs are much more useful when the input data is structured first. The workflow worked best when the NHTSA API handled factual vehicle attributes, the spreadsheet organized the source data, and the Claude layer handled brand-tone formatting and description generation.</p>
+          <p>AI worked best after the factual data was structured. NHTSA handled attributes; Claude handled brand-tone description formatting.</p>
         </section>
         <section class="demo-callout">
           <div>
             <p class="eyebrow">Mock demo</p>
             <h2>Try a simplified version of the workflow</h2>
-            <p>This browser-based demo shows the same operating idea: start with a VIN or vehicle details, structure the data, then generate dealership-style description copy with brand-positioning inputs.</p>
+            <p>Try a browser mock of the same idea: VIN in, structured data out, branded description generated from inputs.</p>
           </div>
           <a class="button primary" href="demo-vin-description.html">Try mock version</a>
         </section>
@@ -146,6 +142,6 @@
     <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
   </footer>
 
-  <script src="script.js?v=20260530-2"></script>
+  <script src="script.js?v=20260530-6"></script>
 </body>
 </html>

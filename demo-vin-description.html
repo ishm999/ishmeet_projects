@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mock VIN Decoder and AI vehicle description workflow demo by Ishmeet Mahajan.">
   <title>Mock VIN Description Demo | Ishmeet Mahajan</title>
-  <link rel="stylesheet" href="styles.css?v=20260530-2">
+  <link rel="stylesheet" href="styles.css?v=20260530-6">
 </head>
 <body>
   <header class="site-header">
@@ -34,7 +34,7 @@
       <a class="back-link" href="case-vin-ai-description.html">Back to Case Study</a>
       <p class="eyebrow">Mock workflow demo</p>
       <h1>VIN Decoder + Branded Description Demo</h1>
-      <p>Enter a VIN or vehicle details to see a simplified version of the workflow: structured vehicle data first, then dealership-style description copy using brand-positioning inputs.</p>
+      <p>Enter a VIN to see the workflow: decode data, structure attributes, then generate branded vehicle copy.</p>
     </section>
 
     <section class="section">
@@ -43,7 +43,7 @@
           <div class="demo-panel-heading">
             <p class="eyebrow">Input</p>
             <h2>VIN and brand inputs</h2>
-            <p>Start with a VIN, then add the tone and dealership proof points the description should reflect.</p>
+            <p>Start with a VIN, dealership name, tone, and proof points.</p>
           </div>
 
           <div class="compact-form-grid">
@@ -106,7 +106,7 @@
           <div class="demo-panel-heading">
             <p class="eyebrow">Workflow run</p>
             <h2>Generating vehicle description</h2>
-            <p class="demo-note">This mock uses a public VIN lookup where available and local template logic for the final copy, so no LLM API key is exposed on GitHub Pages.</p>
+            <p class="demo-note">Public VIN lookup where available; local mock copy generation for GitHub Pages.</p>
           </div>
 
           <div class="workflow-carousel">
@@ -125,7 +125,7 @@
               <div class="run-step" data-step="structure">
                 <span></span>
                 <strong>API data received</strong>
-                <p>Waiting for decoded vehicle details.</p>
+                <p>Waiting for vehicle data.</p>
               </div>
               <div class="run-step" data-step="brand">
                 <span></span>
@@ -170,7 +170,7 @@
               <div class="generated-description" data-description-output>
                 <p>Generated copy will appear here after the workflow runs.</p>
               </div>
-              <p class="demo-disclosure">Note: this demo does not use an actual LLM API. The final text is generated locally to show the workflow concept, so real production results would vary based on VIN data availability, prompt design, brand rules, review process, and the model being used.</p>
+              <p class="demo-disclosure">Demo note: no live LLM API is used here. Production output would depend on VIN data, prompts, brand rules, review, and model choice.</p>
             </div>
           </div>
 
@@ -187,6 +187,6 @@
     <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
   </footer>
 
-  <script src="script.js?v=20260530-2"></script>
+  <script src="script.js?v=20260530-6"></script>
 </body>
 </html>

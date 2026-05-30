@@ -618,7 +618,7 @@
     }
     setActiveStep("decode");
     Object.keys(stepNodes).forEach(function (name) {
-      setStep(name, "", name === "decode" ? "Waiting for input." : "Waiting for the previous step.");
+      setStep(name, "", name === "decode" ? "Waiting for input." : "Waiting for previous step.");
     });
     clearVehicleData();
     setDescriptionMessage("Generated copy will appear here after the workflow runs.");
@@ -647,9 +647,9 @@
     });
     const proof = getValue(formData, "proof");
 
-    setStep("decode", "running", "Calling the public NHTSA VIN Decoder API.");
-    setStep("structure", "", "Waiting for decoded vehicle details.");
-    setStep("brand", "", "Waiting for dealership proof points.");
+    setStep("decode", "running", "Calling the NHTSA VIN API.");
+    setStep("structure", "", "Waiting for vehicle data.");
+    setStep("brand", "", "Waiting for proof points.");
     setStep("description", "", "Waiting to create the mock output.");
     setActiveStep("decode");
     setDescriptionMessage("Running workflow...");
@@ -691,32 +691,32 @@
     setStep("decode", "complete", decodeMessage);
     await sleep(stepCompleteMs);
     setActiveStep("structure");
-    setStep("structure", "running", "Organizing year, make, model, trim, body, and engine into fields.");
+    setStep("structure", "running", "Structuring vehicle attributes.");
     await sleep(stepWorkingMs);
     revealVehicleData(vehicle);
     if (vehicleDataCard) {
       vehicleDataCard.classList.add("is-highlighted");
     }
-    setStep("structure", "complete", hasVehicleData(vehicle) ? "Structured vehicle data is ready for the description step." : "No vehicle attributes were returned for this VIN.");
+    setStep("structure", "complete", hasVehicleData(vehicle) ? "Vehicle data is ready." : "No vehicle attributes were returned.");
 
     await sleep(stepCompleteMs);
     setActiveStep("brand");
-    setStep("brand", "running", "Applying dealership proof points and selected tone options.");
+    setStep("brand", "running", "Applying proof points and tone options.");
     await sleep(stepWorkingMs);
-    setStep("brand", "complete", "Brand and tone options are ready for the output step.");
+    setStep("brand", "complete", "Brand inputs are ready.");
 
     await sleep(stepCompleteMs);
     setActiveStep("description");
-    setStep("description", "running", "Generating mock dealership-style copy.");
+    setStep("description", "running", "Generating mock copy.");
     await sleep(stepWorkingMs);
     if (descriptionOutput) {
       if (hasVehicleData(vehicle)) {
         renderDescriptionOutput(makeDescription(vehicle, dealer, proof, tones));
       } else {
-        setDescriptionMessage("This VIN did not return enough public data for a useful mock description. Try the sample VIN to see the full workflow.");
+        setDescriptionMessage("This VIN did not return enough data. Try the sample VIN to see the full workflow.");
       }
     }
-    setStep("description", "complete", "Mock description generated.");
+    setStep("description", "complete", "Mock description ready.");
     if (demoStage) {
       demoStage.classList.add("is-workflow-done");
     }
