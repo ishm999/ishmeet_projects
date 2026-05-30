@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mock VIN Decoder and AI vehicle description workflow demo by Ishmeet Mahajan.">
+  <title>Mock VIN Description Demo | Ishmeet Mahajan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ishmeet Mahajan home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <span class="brand-name">Ishmeet Mahajan</span>
+        <span class="brand-title">AI-enabled marketing technologist | Creative automation, data workflows, and digital platforms</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">About / Approach</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/ishmeetmahajan">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero canvas-section">
+      <a class="back-link" href="case-vin-ai-description.html">Back to Case Study</a>
+      <p class="eyebrow">Mock workflow demo</p>
+      <h1>VIN Decoder + Branded Description Demo</h1>
+      <p>Enter a VIN or vehicle details to see a simplified version of the workflow: structured vehicle data first, then dealership-style description copy using brand-positioning inputs.</p>
+    </section>
+
+    <section class="section">
+      <section class="demo-stage" data-demo-stage aria-live="polite">
+        <form class="demo-panel demo-form-view" data-vin-demo-form>
+          <div class="demo-panel-heading">
+            <p class="eyebrow">Input</p>
+            <h2>VIN and brand inputs</h2>
+            <p>Start with a VIN, then add the tone and dealership proof points the description should reflect.</p>
+          </div>
+
+          <div class="compact-form-grid">
+            <div class="vin-entry">
+              <label>
+                VIN
+                <input name="vin" type="text" inputmode="latin-prose" maxlength="17" placeholder="Enter a 17-character VIN" autocomplete="off" required>
+              </label>
+              <div class="sample-vin">
+                <span>Do not have a VIN on hand?</span>
+                <button type="button" data-demo-sample>Try sample VIN</button>
+                <code>1HGCV1F34JA000001</code>
+              </div>
+            </div>
+
+            <label>
+              Dealership name
+              <input name="dealer" type="text" value="ABC Dealership">
+            </label>
+
+          </div>
+
+          <fieldset class="tone-options">
+            <legend>Description tone</legend>
+            <div class="tone-chip-grid">
+              <label class="tone-chip">
+                <input type="checkbox" name="tones" value="clear" checked>
+                <span>Clear &amp; customer-focused</span>
+              </label>
+              <label class="tone-chip">
+                <input type="checkbox" name="tones" value="friendly">
+                <span>Friendly &amp; warm</span>
+              </label>
+              <label class="tone-chip">
+                <input type="checkbox" name="tones" value="premium">
+                <span>Premium &amp; polished</span>
+              </label>
+              <label class="tone-chip">
+                <input type="checkbox" name="tones" value="practical">
+                <span>Practical &amp; direct</span>
+              </label>
+              <label class="tone-chip">
+                <input type="checkbox" name="tones" value="confidence">
+                <span>Confidence-building</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label>
+            Brand / dealership differentiators
+            <textarea name="proof" rows="3">an award-winning customer experience, transparent negotiation-free pricing, a certified inspection by manufacturer-trained technicians, online or in-store purchase support, fast digital paperwork, dedicated delivery coordination</textarea>
+          </label>
+
+          <div class="button-row demo-actions">
+            <button class="button primary" type="submit">Generate mock description</button>
+          </div>
+        </form>
+
+        <div class="demo-panel demo-run-view">
+          <div class="demo-panel-heading">
+            <p class="eyebrow">Workflow run</p>
+            <h2>Generating vehicle description</h2>
+            <p class="demo-note">This mock uses a public VIN lookup where available and local template logic for the final copy, so no LLM API key is exposed on GitHub Pages.</p>
+          </div>
+
+          <div class="workflow-carousel">
+            <div class="workflow-progress" aria-hidden="true">
+              <span class="progress-dot" data-progress-step="decode"></span>
+              <span class="progress-dot" data-progress-step="structure"></span>
+              <span class="progress-dot" data-progress-step="brand"></span>
+              <span class="progress-dot" data-progress-step="description"></span>
+            </div>
+            <div class="run-steps node-flow" aria-label="Workflow run steps">
+              <div class="run-step" data-step="decode">
+                <span></span>
+                <strong>NHTSA decode</strong>
+                <p>Waiting for input.</p>
+              </div>
+              <div class="run-step" data-step="structure">
+                <span></span>
+                <strong>API data received</strong>
+                <p>Waiting for decoded vehicle details.</p>
+              </div>
+              <div class="run-step" data-step="brand">
+                <span></span>
+                <strong>Brand tone</strong>
+                <p>Waiting for dealership proof points.</p>
+              </div>
+              <div class="run-step" data-step="description">
+                <span></span>
+                <strong>Description output</strong>
+                <p>Waiting to create the mock output.</p>
+              </div>
+            </div>
+            <div class="workflow-status" aria-live="polite">
+              <span class="status-running">Workflow running</span>
+              <span class="status-complete">Workflow complete</span>
+              <span class="status-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="demo-results-grid">
+            <div class="vehicle-data-card">
+              <h3>Structured vehicle data received</h3>
+              <dl data-vehicle-data>
+                <div><dt>Year</dt><dd>-</dd></div>
+                <div><dt>Make</dt><dd>-</dd></div>
+                <div><dt>Model</dt><dd>-</dd></div>
+                <div><dt>Trim</dt><dd>-</dd></div>
+                <div><dt>Body</dt><dd>-</dd></div>
+                <div><dt>Engine</dt><dd>-</dd></div>
+                <div><dt>Drive</dt><dd>-</dd></div>
+                <div><dt>Fuel</dt><dd>-</dd></div>
+                <div><dt>Cab</dt><dd>-</dd></div>
+              </dl>
+            </div>
+
+            <div class="description-output">
+              <h3>Mock branded description</h3>
+              <div class="generated-description" data-description-output>
+                <p>Generated copy will appear here after the workflow runs.</p>
+              </div>
+              <p class="demo-disclosure">Note: this demo does not use an actual LLM API. The final text is generated locally to show the workflow concept, so real production results would vary based on VIN data availability, prompt design, brand rules, review process, and the model being used.</p>
+            </div>
+          </div>
+
+          <div class="button-row demo-actions">
+            <button class="button secondary" type="button" data-demo-reset>Run another VIN</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Ishmeet Mahajan. Marketing operations, workflow systems, and practical AI enablement.</p>
+    <a href="https://www.linkedin.com/in/ishmeetmahajan">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
